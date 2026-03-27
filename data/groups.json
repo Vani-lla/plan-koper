@@ -1,0 +1,27 @@
+{
+  "1A": {
+    "Angielski": [
+        [["ang", "MM"]],
+        [["ang", "PC"]]
+    ],
+    "Angielski+Informatyka": [
+        [["inf", "TG"], ["ang", "PC"]],
+        [["inf", "TG"], ["ang", "MM"]]
+    ],
+    "Językowa": [
+        [["ros", "PM"]],
+        [["fran", "TS"]],
+        [["niem", "LJ"]]
+    ],
+    "WF": [
+        [["wf", "BH"]],
+        [["wf", "BL"]],
+        [["wf", "WH"]]
+    ],
+    "Religia": [
+        [["relkat", "Br"]],
+        [["relew", "Mr"]],
+        [["et", "DC"]]
+    ]
+  }
+}
