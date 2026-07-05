@@ -1,0 +1,1264 @@
+Status: OPTIMAL
+Objective: 0
+Teacher gaps: 524
+Partial-group slots: 0
+Room score: 0
+
+=== 1A ===
+Mon
+  01. fran [TS] (1A+1F) @ ?
+  02. wf [BL] (1A+1B+1G) @ ?
+  03. his [WG] @ ?
+  04. inf [TG] @ ?
+  05. ang [MM] @ ?
+  06. ang [MM] @ ?
+  07. wf [BH] @ ?
+  08. biol [Sc] @ ?
+  09. wf [BL] (1A+1B+1G) @ ?
+  10. ang [PC] @ ?
+  11. ros [PM] (1A+1F) @ ?
+
+Tue
+  01. pol [AŻ] @ ?
+  02. wf [BL] (1A+1B+1G) @ ?
+  03. wf [WH] (1A+1B+1C) @ ?
+  04. ang [MM] @ ?
+  05. biol [Sc] @ ?
+  06. ang [MM] @ ?
+  07. pol [AŻ] @ ?
+  08. biz [Gr] @ ?
+  09. biol [Sc] @ ?
+  10. biz [Gr] @ ?
+  11. ang [PC] @ ?
+
+Wed
+  01. ang [PC] @ ?
+  02. relkat [Br] @ ?
+  03. ang [MM] @ ?
+  04. ang [PC] @ ?
+  05. niem [LJ] (1A+1F) @ ?
+  06. pol [AŻ] @ ?
+  07. pol [AŻ] @ ?
+  08. mat [MG] @ ?
+  09. chem [Sz] @ ?
+  10. fil [DC] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. mat [MG] @ ?
+  02. relew [Mr] (1A+1B+1C+1D+1G) @ ?
+  03. mat [MG] @ ?
+  04. pol [AŻ] @ ?
+  05. ang [PC] @ ?
+  06. lw [BH] @ ?
+  07. ang [PC] @ ?
+  08. inf [TG] @ ?
+  09. wf [WH] (1A+1B+1C) @ ?
+  10. wf [BH] @ ?
+  11. niem [LJ] (1A+1F) @ ?
+
+Fri
+  01. fiz [MH] @ ?
+  02. pol [AŻ] @ ?
+  03. geo [Si] @ ?
+  04. ang [MM] @ ?
+  05. fran [TS] (1A+1F) @ ?
+  06. wf [WH] (1A+1B+1C) @ ?
+  07. his [WG] @ ?
+  08. edb [Wr] @ ?
+  09. wf [BH] @ ?
+  10. zajksztkr [Sc] @ ?
+  11. ros [PM] (1A+1F) @ ?
+
+
+=== 1B ===
+Mon
+  01. inf [AA] @ ?
+  02. wf [BL] (1A+1B+1G) @ ?
+  04. inf [AA] @ ?
+  05. mat [RR] @ ?
+  06. his [WG] @ ?
+  07. ang [IP] @ ?
+  08. wf [BH] @ ?
+  09. wf [BL] (1A+1B+1G) @ ?
+
+Tue
+  01. mat [RR] @ ?
+  02. wf [BL] (1A+1B+1G) @ ?
+  03. wf [WH] (1A+1B+1C) @ ?
+  04. ang [Si] @ ?
+  05. mat [RR] @ ?
+  06. geo [AC] @ ?
+  07. geo [AC] @ ?
+  08. pol [AŻ] @ ?
+  09. ang [Si] @ ?
+  10. ang [IP] @ ?
+  11. biol [Sc] @ ?
+
+Wed
+  01. wf [BH] @ ?
+  02. niem [LJ] @ ?
+  03. chem [Sz] @ ?
+  04. zajksztkr [Si] @ ?
+  05. edb [Wr] @ ?
+  06. ang [Si] @ ?
+  07. niem [LJ] @ ?
+  08. pol [AŻ] @ ?
+  09. pol [AŻ] @ ?
+  10. fran [Żo] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. ang [IP] @ ?
+  02. relew [Mr] (1A+1B+1C+1D+1G) @ ?
+  03. wf [BH] @ ?
+  04. ang [Si] @ ?
+  05. fil [DC] @ ?
+  06. lw [LJ] @ ?
+  07. fran [Żo] @ ?
+  08. biz [Gr] @ ?
+  09. wf [WH] (1A+1B+1C) @ ?
+  10. his [WG] @ ?
+
+Fri
+  01. fran [Żo] @ ?
+  02. niem [LJ] @ ?
+  03. pol [AŻ] @ ?
+  04. relkat [Br] @ ?
+  05. ang [IP] @ ?
+  06. wf [WH] (1A+1B+1C) @ ?
+  07. fran [Żo] @ ?
+  08. fiz [MH] @ ?
+  09. biz [Gr] @ ?
+  11. niem [LJ] @ ?
+
+
+=== 1C ===
+Mon
+  02. wf [Pi] (1C+1D) @ ?
+  03. pol [AT] @ ?
+  04. pol [AT] @ ?
+  05. inf [AA] @ ?
+  06. ang [Si] @ ?
+  07. lw [MŻ] @ ?
+  08. biz [Gr] @ ?
+  09. ang [Kw] @ ?
+  10. fran [Żo] (1C+1D) @ ?
+  11. niem [LJ] (1C+1G) @ ?
+
+Tue
+  01. wf [Pi] (1C+1D) @ ?
+  02. mat [MG] @ ?
+  03. wf [WH] (1A+1B+1C) @ ?
+  04. his [MŻ] @ ?
+  05. fiz [MH] @ ?
+  07. mat [MG] @ ?
+  08. ros [PM] (1C+1D+1G) @ ?
+  10. fran [Żo] (1C+1D) @ ?
+  11. niem [LJ] (1C+1G) @ ?
+
+Wed
+  03. his [MŻ] @ ?
+  04. biz [Gr] @ ?
+  05. wos [MŻ] @ ?
+  06. pol [AT] @ ?
+  07. pol [AT] @ ?
+  09. his [MŻ] @ ?
+  10. ros [PM] (1C+1D+1G) @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  02. relew [Mr] (1A+1B+1C+1D+1G) @ ?
+  03. relkat [Br] @ ?
+  04. ang [Kw] @ ?
+  05. biol [Sc] @ ?
+  06. mat [MG] @ ?
+  07. ang [Si] @ ?
+  08. ang [Kw] @ ?
+  09. wf [WH] (1A+1B+1C) @ ?
+  11. ang [Si] @ ?
+
+Fri
+  01. zajksztkr [MŻ] @ ?
+  02. pol [AT] @ ?
+  03. edb [Wr] @ ?
+  04. chem [Sz] @ ?
+  05. fil [DC] @ ?
+  06. wf [WH] (1A+1B+1C) @ ?
+  07. pol [AT] @ ?
+  08. geo [IM] @ ?
+  09. wf [Pi] (1C+1D) @ ?
+  10. inf [AA] @ ?
+
+
+=== 1D ===
+Mon
+  01. ang [Si] @ ?
+  02. wf [Pi] (1C+1D) @ ?
+  03. pol [MN] @ ?
+  04. pol [MN] @ ?
+  05. lw [Si] @ ?
+  06. biz [Gr] @ ?
+  07. biz [Gr] @ ?
+  09. zajksztkr [MH] @ ?
+  10. fran [Żo] (1C+1D) @ ?
+
+Tue
+  01. wf [Pi] (1C+1D) @ ?
+  02. geo [Si] @ ?
+  03. niem [Ku] @ ?
+  04. his [WG] @ ?
+  05. ang [JD] @ ?
+  06. mat [AG] @ ?
+  07. mat [AG] @ ?
+  08. ros [PM] (1C+1D+1G) @ ?
+  09. niem [Ku] @ ?
+  10. fran [Żo] (1C+1D) @ ?
+
+Wed
+  03. mat [AG] @ ?
+  04. chem [Sz] @ ?
+  05. his [WG] @ ?
+  06. ang [JD] @ ?
+  07. fiz [MH] @ ?
+  08. wf [WH] @ ?
+  09. wf [WH] @ ?
+  10. ros [PM] (1C+1D+1G) @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. ang [Si] @ ?
+  02. relew [Mr] (1A+1B+1C+1D+1G) @ ?
+  03. fil [DC] @ ?
+  04. pol [MN] @ ?
+  05. relkat [Br] @ ?
+  06. inf [TG] @ ?
+  07. mat [AG] @ ?
+  08. pol [MN] @ ?
+  09. ang [Si] @ ?
+  11. biol [Sc] @ ?
+
+Fri
+  01. inf [TG] @ ?
+  02. ang [JD] @ ?
+  03. inf [TG] @ ?
+  04. inf [TG] @ ?
+  05. fiz [MH] @ ?
+  06. mat [AG] @ ?
+  07. edb [Wr] @ ?
+  08. wf [WH] @ ?
+  09. wf [Pi] (1C+1D) @ ?
+
+
+=== 1F ===
+Mon
+  01. fran [TS] (1A+1F) @ ?
+  03. geo [IM] @ ?
+  04. pol [PŁ] @ ?
+  05. pol [PŁ] @ ?
+  06. mat [MG] @ ?
+  07. mat [MG] @ ?
+  08. ang [PM] @ ?
+  09. ang [PM] @ ?
+  11. ros [PM] (1A+1F) @ ?
+
+Tue
+  01. relkat [Br] @ ?
+  02. inf [AA] @ ?
+  03. mat [MG] @ ?
+  04. biol [Sc] @ ?
+  05. pol [PŁ] @ ?
+  06. biz [Gr] @ ?
+  07. fil [DC] @ ?
+  08. ang [Kw] @ ?
+  09. wf [Pi] (1F+1G) @ ?
+  10. pol [PŁ] @ ?
+
+Wed
+  01. biol [Sc] @ ?
+  02. inf [AA] @ ?
+  03. mat [MG] @ ?
+  04. fiz [MH] @ ?
+  05. niem [LJ] (1A+1F) @ ?
+  06. zajksztkr [Sc] @ ?
+  07. chem [Sz] @ ?
+  08. chem [Sz] @ ?
+  09. wf [Pi] (1F+1G) @ ?
+  10. biol [Sc] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  02. wf [BL] @ ?
+  03. wf [Pi] (1F+1G) @ ?
+  04. lw [PM] @ ?
+  05. mat [MG] @ ?
+  06. his [WG] @ ?
+  07. his [WG] @ ?
+  08. chem [Sz] @ ?
+  09. ang [PM] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. niem [LJ] (1A+1F) @ ?
+
+Fri
+  02. ang [Kw] @ ?
+  03. wf [BL] @ ?
+  05. fran [TS] (1A+1F) @ ?
+  06. edb [Wr] @ ?
+  07. biz [Gr] @ ?
+  08. wf [BL] @ ?
+  09. ang [Kw] @ ?
+  11. ros [PM] (1A+1F) @ ?
+
+
+=== 1G ===
+Mon
+  01. fil [DC] @ ?
+  02. wf [BL] (1A+1B+1G) @ ?
+  03. mat [MP] @ ?
+  04. mat [MP] @ ?
+  05. geo [AC] @ ?
+  06. ang [MW] @ ?
+  07. inf [AA] @ ?
+  08. his [WG] @ ?
+  09. wf [BL] (1A+1B+1G) @ ?
+  10. ang [IP] @ ?
+  11. niem [LJ] (1C+1G) @ ?
+
+Tue
+  02. wf [BL] (1A+1B+1G) @ ?
+  04. mat [MP] @ ?
+  05. pol [AŻ] @ ?
+  06. ang [MW] @ ?
+  07. ang [MW] @ ?
+  08. ros [PM] (1C+1D+1G) @ ?
+  09. wf [Pi] (1F+1G) @ ?
+  11. niem [LJ] (1C+1G) @ ?
+
+Wed
+  02. fiz [MH] @ ?
+  03. geo [AC] @ ?
+  04. pol [AŻ] @ ?
+  05. pol [AŻ] @ ?
+  06. ang [IP] @ ?
+  07. biz [Gr] @ ?
+  08. mat [MP] @ ?
+  09. wf [Pi] (1F+1G) @ ?
+  10. ros [PM] (1C+1D+1G) @ ?
+  11. ang [IP] @ ?
+
+Thu
+  02. relew [Mr] (1A+1B+1C+1D+1G) @ ?
+  03. wf [Pi] (1F+1G) @ ?
+  04. mat [MP] @ ?
+  05. biz [Gr] @ ?
+  06. biol [Sc] @ ?
+  07. pol [AŻ] @ ?
+  08. fran [Żo] @ ?
+  09. fran [Żo] @ ?
+
+Fri
+  02. relkat [Br] @ ?
+  03. zajksztkr [IP] @ ?
+  04. edb [Wr] @ ?
+  05. chem [Sz] @ ?
+  06. ang [IP] @ ?
+  07. lw [MP] @ ?
+  08. his [WG] @ ?
+  09. inf [AA] @ ?
+  10. ang [MW] @ ?
+
+
+=== 2A ===
+Mon
+  01. ang [IP] @ ?
+  03. mat [AG] @ ?
+  04. fiz [MH] @ ?
+  05. pol [AT] @ ?
+  06. pol [AT] @ ?
+  07. geo [IM] @ ?
+  08. his [IM] @ ?
+  09. ez [Sc] (2A+2B+2G) @ ?
+
+Tue
+  01. eo [IM] @ ?
+  02. ros [PM] @ ?
+  03. ang [Wa] @ ?
+  04. wf [BH] @ ?
+  05. biz [Gr] @ ?
+  06. geo [IM] @ ?
+  07. ang [Wa] @ ?
+  08. biol [BW] @ ?
+  09. mat [AG] @ ?
+  10. lw [IM] @ ?
+  11. wf [Pi] (2A+2B) @ ?
+
+Wed
+  01. pol [AT] @ ?
+  02. his [IM] @ ?
+  03. ros [PM] @ ?
+  04. wos [DC] @ ?
+  05. pol [AT] @ ?
+  06. biol [BW] @ ?
+  07. mat [AG] @ ?
+  08. inf [PH] @ ?
+  09. biz [Gr] @ ?
+  10. mat [AG] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. biol [BW] @ ?
+  02. ros [PM] @ ?
+  03. ang [IP] @ ?
+  04. his [IM] @ ?
+  05. ang [IP] @ ?
+  06. ros [PM] @ ?
+  07. chem [JP] @ ?
+  08. chem [JP] @ ?
+  09. zajksztkr [IM] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. wf [BH] @ ?
+
+Fri
+  01. inf [PH] @ ?
+  02. ang [Wa] @ ?
+  03. wf [Pi] (2A+2B) @ ?
+  04. pol [AT] @ ?
+  05. pol [AT] @ ?
+  06. wf [BH] @ ?
+  07. eo [IM] @ ?
+  08. wos [DC] @ ?
+  09. biol [BW] @ ?
+  10. relkat [Br] (2A+2G) @ ?
+  11. wf [Pi] (2A+2B) @ ?
+
+
+=== 2B ===
+Mon
+  01. inf [PH] @ ?
+  03. fiz [MH] @ ?
+  04. biz [Gr] @ ?
+  05. biz [Gr] @ ?
+  06. mat [AG] @ ?
+  07. lw [JD] @ ?
+  08. ang [Wa] @ ?
+  09. ez [Sc] (2A+2B+2G) @ ?
+  10. zajksztkr [PM] @ ?
+  11. ang [JD] @ ?
+
+Tue
+  01. ang [JD] @ ?
+  02. ang [Wa] @ ?
+  03. ang [JD] @ ?
+  04. biol [BW] @ ?
+  05. his [WG] @ ?
+  06. ang [Wa] @ ?
+  07. his [WG] @ ?
+  08. pol [AT] @ ?
+  09. eo [MŻ] @ ?
+  10. wf [BH] @ ?
+  11. wf [Pi] (2A+2B) @ ?
+
+Wed
+  01. niem [Ku] @ ?
+  02. pol [AT] @ ?
+  03. pol [AT] @ ?
+  04. mat [AG] @ ?
+  05. mat [AG] @ ?
+  06. inf [PH] @ ?
+  07. ang [Wa] @ ?
+  08. geo [AC] @ ?
+  09. geo [AC] @ ?
+  10. ang [JD] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. pol [AT] @ ?
+  02. mat [AG] @ ?
+  03. biol [BW] @ ?
+  04. chem [JP] @ ?
+  05. niem [Ku] @ ?
+  06. geo [AC] @ ?
+  07. ang [JD] @ ?
+  08. wf [BH] @ ?
+  09. wf [BH] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. ang [Wa] @ ?
+
+Fri
+  01. niem [Ku] @ ?
+  02. chem [JP] @ ?
+  03. wf [Pi] (2A+2B) @ ?
+  04. mat [AG] @ ?
+  05. mat [AG] @ ?
+  06. fran [TS] @ ?
+  07. niem [Ku] @ ?
+  08. eo [MŻ] @ ?
+  09. relkat [Br] @ ?
+  10. fran [TS] @ ?
+  11. wf [Pi] (2A+2B) @ ?
+
+
+=== 2D ===
+Mon
+  01. mat [MG] @ ?
+  02. chem [Sz] @ ?
+  03. biz [Gr] @ ?
+  04. geo [IM] @ ?
+  05. geo [IM] @ ?
+  06. wf [Pi] (2D+2G) @ ?
+  07. ang [MW] @ ?
+  08. biol [BW] @ ?
+  09. biz [Gr] @ ?
+
+Tue
+  02. inf [TG] @ ?
+  03. inf [TG] @ ?
+  04. pol [MN] @ ?
+  05. pol [MN] @ ?
+  06. wf [BL] (2D+2G) @ ?
+  08. wf [BL] (2D+2G) @ ?
+  09. his [IM] @ ?
+  10. mat [MG] @ ?
+  11. chem [Sz] @ ?
+
+Wed
+  01. biol [BW] @ ?
+  02. wf [Pi] (2D+2G) @ ?
+  03. ez [BW] @ ?
+  04. inf [TG] @ ?
+  05. ang [MW] @ ?
+  06. mat [MG] @ ?
+  07. mat [MG] @ ?
+  08. niem [LJ] @ ?
+  09. pol [MN] @ ?
+  11. wf [Pi] (2D+2G) @ ?
+
+Thu
+  02. chem [Sz] @ ?
+  03. chem [Sz] @ ?
+  04. niem [LJ] @ ?
+  05. his [IM] @ ?
+  06. ang [MW] @ ?
+  07. biol [BW] @ ?
+  08. fiz [MH] @ ?
+  09. fiz [MH] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. biol [BW] @ ?
+
+Fri
+  01. zajksztkr [BW] @ ?
+  02. eo [IM] @ ?
+  03. eo [IM] @ ?
+  04. mat [MG] @ ?
+  05. pol [MN] @ ?
+  06. lw [BW] @ ?
+  07. fiz [MH] @ ?
+  08. relkat [Br] @ ?
+  09. inf [TG] @ ?
+  11. wf [BL] (2D+2G) @ ?
+
+
+=== 2G ===
+Mon
+  01. mat [MP] @ ?
+  02. ang [MM] @ ?
+  03. ang [MM] @ ?
+  04. lw [Żo] @ ?
+  05. fiz [MH] @ ?
+  06. wf [Pi] (2D+2G) @ ?
+  07. pol [AT] @ ?
+  08. pol [AT] @ ?
+  09. ez [Sc] (2A+2B+2G) @ ?
+
+Tue
+  02. inf [PH] @ ?
+  03. geo [AC] @ ?
+  04. biz [Gr] @ ?
+  05. ang [MM] @ ?
+  06. wf [BL] (2D+2G) @ ?
+  08. wf [BL] (2D+2G) @ ?
+  09. pol [AT] @ ?
+
+Wed
+  02. wf [Pi] (2D+2G) @ ?
+  03. mat [MP] @ ?
+  04. biol [Sc] @ ?
+  05. biol [Sc] @ ?
+  06. chem [Sz] @ ?
+  07. fran [Żo] @ ?
+  08. his [MŻ] @ ?
+  09. inf [PH] @ ?
+  11. wf [Pi] (2D+2G) @ ?
+
+Thu
+  02. mat [MP] @ ?
+  03. mat [MP] @ ?
+  04. pol [AT] @ ?
+  05. ang [MM] @ ?
+  06. ang [MM] @ ?
+  07. geo [AC] @ ?
+  08. geo [AC] @ ?
+  09. chem [Sz] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. fran [Żo] @ ?
+
+Fri
+  03. zajksztkr [MM] @ ?
+  04. eo [IM] @ ?
+  05. mat [MP] @ ?
+  06. mat [MP] @ ?
+  07. his [MŻ] @ ?
+  08. biz [Gr] @ ?
+  09. eo [IM] @ ?
+  10. relkat [Br] (2A+2G) @ ?
+  11. wf [BL] (2D+2G) @ ?
+
+
+=== 3A ===
+Mon
+  01. geo [AC] @ ?
+  02. ang [Wa] @ ?
+  03. ang [Wa] @ ?
+  04. relkat [Br] (3A+3D) @ ?
+  05. ang [JD] @ ?
+  06. wos [DC] @ ?
+  07. biol [BW] @ ?
+  08. pol [KP] @ ?
+  09. geo [AC] @ ?
+  10. ang [JD] @ ?
+  11. zajksztkr [KP] @ ?
+
+Tue
+  01. ang [Wa] @ ?
+  02. fran [TS] @ ?
+  03. wf [Pi] (3A+3C) @ ?
+  04. ang [JD] @ ?
+  05. wos [DC] @ ?
+  06. fiz [MH] @ ?
+  07. niem [LJ] @ ?
+  08. wf [BH] @ ?
+  09. wf [BH] @ ?
+  10. wf [Pi] (3A+3C) @ ?
+  11. his [MŻ] @ ?
+
+Wed
+  01. wos [DC] @ ?
+  02. chem [Sz] @ ?
+  03. wf [BH] @ ?
+  04. ang [Wa] @ ?
+  05. ang [Wa] @ ?
+  06. pol [KP] @ ?
+  07. geo [AC] @ ?
+  08. mat [AA] @ ?
+  09. mat [AA] @ ?
+  10. wf [Pi] (3A+3C) @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. fran [TS] @ ?
+  02. fiz [MH] @ ?
+  03. pol [KP] @ ?
+  04. ang [JD] @ ?
+  05. fiz [MH] @ ?
+  06. lw [Wa] @ ?
+  07. pol [KP] @ ?
+  08. mat [AA] @ ?
+  09. ez [BL] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. ros [PM] (3A+3C+3D+3F+3G) @ ?
+
+Fri
+  01. niem [LJ] @ ?
+  02. inf [TG] @ ?
+  03. cs [MŻ] @ ?
+  04. cs [MŻ] @ ?
+  05. ang [JD] @ ?
+  06. his [MŻ] @ ?
+  07. inf [TG] @ ?
+  08. ang [JD] @ ?
+  09. ros [PM] (3A+3C+3D+3F+3G) @ ?
+  10. ang [Wa] @ ?
+
+
+=== 3B ===
+Mon
+  02. pol [PŁ] @ ?
+  03. ang [PC] @ ?
+  04. wf [BL] @ ?
+  05. wf [BL] @ ?
+  06. niem [Ku] @ ?
+  07. roselkul [PM] @ ?
+  08. ang [IP] @ ?
+  09. zajksztkr [PŁ] @ ?
+  10. mat [MP] @ ?
+
+Tue
+  01. niem [Ku] @ ?
+  02. fiz [MH] @ ?
+  03. fiz [MH] @ ?
+  04. inf [PH] @ ?
+  05. ang [PC] @ ?
+  06. fran [Żo] @ ?
+  07. fran [Żo] @ ?
+  08. biol [Sc] @ ?
+  10. inf [PH] @ ?
+
+Wed
+  01. ang [IP] @ ?
+  02. ang [IP] @ ?
+  03. wf [BL] @ ?
+  04. mat [MP] @ ?
+  05. mat [MP] @ ?
+  06. ang [PC] @ ?
+  07. ang [IP] @ ?
+  11. wf [WH] (3B+3F) @ ?
+
+Thu
+  01. geo [AC] @ ?
+  02. wf [WH] (3B+3F) @ ?
+  03. ang [PC] @ ?
+  04. fran [Żo] @ ?
+  05. geo [AC] @ ?
+  06. pol [PŁ] @ ?
+  07. roselkul [PM] @ ?
+  08. roselkul [PM] @ ?
+  09. ang [IP] @ ?
+  10. wf [WH] (3B+3F) @ ?
+  11. ang [PC] @ ?
+
+Fri
+  01. relkat [Br] (3B+3C) @ ?
+  02. lw [DC] @ ?
+  03. chem [Sz] @ ?
+  04. niem [Ku] @ ?
+  05. fran [Żo] @ ?
+  06. his [DC] @ ?
+  07. his [DC] @ ?
+  08. pol [PŁ] @ ?
+  09. pol [PŁ] @ ?
+  11. niem [Ku] @ ?
+
+
+=== 3C ===
+Mon
+  01. ang [Wa] @ ?
+  02. niem [Ku] @ ?
+  03. ang [Kw] @ ?
+  04. ang [Wa] @ ?
+  05. pol [MN] @ ?
+  06. mat [AA] @ ?
+  07. wos [DC] @ ?
+  08. wos [DC] @ ?
+  09. zajksztkr [DC] @ ?
+  10. wf [BH] @ ?
+  11. ang [Kw] @ ?
+
+Tue
+  01. pol [MN] @ ?
+  02. niem [Ku] @ ?
+  03. wf [Pi] (3A+3C) @ ?
+  04. fiz [MD] @ ?
+  05. his [MŻ] @ ?
+  06. his [MŻ] @ ?
+  07. biol [Sc] @ ?
+  10. wf [Pi] (3A+3C) @ ?
+
+Wed
+  01. inf [PH] @ ?
+  02. pol [MN] @ ?
+  03. pol [MN] @ ?
+  04. ang [Kw] @ ?
+  05. inf [PH] @ ?
+  06. geo [IM] @ ?
+  07. lw [Ku] @ ?
+  08. fiz [MD] @ ?
+  09. wos [DC] @ ?
+  10. wf [Pi] (3A+3C) @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. ez [BL] (3C+3D+3G) @ ?
+  02. mat [AA] @ ?
+  03. mat [AA] @ ?
+  04. wf [BH] @ ?
+  05. wf [BH] @ ?
+  08. ang [Wa] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. ros [PM] (3A+3C+3D+3F+3G) @ ?
+
+Fri
+  01. relkat [Br] (3B+3C) @ ?
+  03. pol [MN] @ ?
+  04. pol [MN] @ ?
+  05. his [MŻ] @ ?
+  07. chem [Sz] @ ?
+  08. fran [Żo] @ ?
+  09. ros [PM] (3A+3C+3D+3F+3G) @ ?
+  10. fran [Żo] @ ?
+  11. his [MŻ] @ ?
+
+
+=== 3D ===
+Mon
+  01. ang [MW] @ ?
+  02. mat [AG] @ ?
+  03. ang [JD] @ ?
+  04. relkat [Br] (3A+3D) @ ?
+  05. mat [AG] @ ?
+  06. fiz [MH] @ ?
+  07. fiz [MH] @ ?
+  08. wf [WH] @ ?
+  10. wf [WH] @ ?
+  11. wf [BL] (3D+4D) @ ?
+
+Tue
+  02. his [WG] @ ?
+  03. his [WG] @ ?
+  04. mat [AG] @ ?
+  05. wf [WH] @ ?
+  06. inf [TG] @ ?
+  07. ang [JD] @ ?
+  08. mat [AG] @ ?
+  09. ang [JD] @ ?
+  10. wf [BL] (3D+4D) @ ?
+  11. inf [TG] @ ?
+
+Wed
+  02. zajksztkr [AG] @ ?
+  03. pol [PŁ] @ ?
+  04. pol [PŁ] @ ?
+  05. wf [BL] (3D+4D) @ ?
+  06. inf [TG] @ ?
+  07. inf [TG] @ ?
+  08. inf [TG] @ ?
+  09. ang [MW] @ ?
+
+Thu
+  01. ez [BL] (3C+3D+3G) @ ?
+  02. biol [Sc] @ ?
+  03. inf [TG] @ ?
+  04. mat [AG] @ ?
+  05. mat [AG] @ ?
+  06. lw [BL] @ ?
+  07. chem [Sz] @ ?
+  11. ros [PM] (3A+3C+3D+3F+3G) @ ?
+
+Fri
+  01. ang [MW] @ ?
+  02. fran [TS] (3D+3F) @ ?
+  03. fiz [MH] @ ?
+  04. fiz [MH] @ ?
+  05. geo [IM] @ ?
+  06. pol [PŁ] @ ?
+  07. pol [PŁ] @ ?
+  08. niem [LJ] @ ?
+  09. ros [PM] (3A+3C+3D+3F+3G) @ ?
+  10. niem [LJ] @ ?
+  11. fran [TS] (3D+3F) @ ?
+
+
+=== 3F ===
+Mon
+  01. wf [BL] @ ?
+  03. wf [BL] @ ?
+  04. mat [MG] @ ?
+  05. mat [MG] @ ?
+  06. biol [BW] @ ?
+  07. pol [MN] @ ?
+  08. pol [MN] @ ?
+  09. relkat [Br] (3F+3G) @ ?
+  11. inf [PH] @ ?
+
+Tue
+  02. zajksztkr [BW] @ ?
+  03. fiz [MD] @ ?
+  04. chem [Sz] @ ?
+  05. mat [MG] @ ?
+  06. biol [BW] @ ?
+  07. lw [Sz] @ ?
+  08. his [WG] @ ?
+  09. ez [BW] @ ?
+
+Wed
+  04. pol [MN] @ ?
+  06. fiz [MD] @ ?
+  07. ang [Kw] @ ?
+  08. ang [JD] @ ?
+  09. biol [BW] @ ?
+  10. inf [PH] @ ?
+  11. wf [WH] (3B+3F) @ ?
+
+Thu
+  01. pol [MN] @ ?
+  02. wf [WH] (3B+3F) @ ?
+  03. ang [Kw] @ ?
+  04. mat [MG] @ ?
+  05. chem [Sz] @ ?
+  06. chem [Sz] @ ?
+  07. geo [IM] @ ?
+  08. wf [BL] @ ?
+  10. wf [WH] (3B+3F) @ ?
+  11. ros [PM] (3A+3C+3D+3F+3G) @ ?
+
+Fri
+  01. ang [Kw] @ ?
+  02. fran [TS] (3D+3F) @ ?
+  03. ang [JD] @ ?
+  04. ang [JD] @ ?
+  05. mat [MG] @ ?
+  06. his [WG] @ ?
+  07. biol [BW] @ ?
+  08. niem [Ku] @ ?
+  09. ros [PM] (3A+3C+3D+3F+3G) @ ?
+  10. niem [Ku] @ ?
+  11. fran [TS] (3D+3F) @ ?
+
+
+=== 3G ===
+Mon
+  01. niem [LJ] @ ?
+  02. inf [TG] @ ?
+  03. mat [Me] @ ?
+  04. biol [BW] @ ?
+  05. pol [KP] @ ?
+  06. ang [Kw] @ ?
+  07. ang [Si] @ ?
+  08. ang [Si] @ ?
+  09. relkat [Br] (3F+3G) @ ?
+  10. ang [Kw] @ ?
+  11. inf [TG] @ ?
+
+Tue
+  01. fiz [MD] @ ?
+  02. mat [Me] @ ?
+  03. ang [Si] @ ?
+  04. fran [TS] @ ?
+  05. niem [LJ] @ ?
+  06. ang [Kw] @ ?
+  07. ang [Kw] @ ?
+  08. chem [Sz] @ ?
+  09. geo [AC] @ ?
+  10. fran [TS] @ ?
+
+Wed
+  01. ang [Si] @ ?
+  02. wf [WH] @ ?
+  03. mat [Me] @ ?
+  04. geo [AC] @ ?
+  05. fiz [MD] @ ?
+  07. pol [KP] @ ?
+  08. his [IM] @ ?
+  09. zajksztkr [MP] @ ?
+  10. ang [Si] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. ez [BL] (3C+3D+3G) @ ?
+  02. mat [Me] @ ?
+  03. mat [Me] @ ?
+  04. wf [Pi] @ ?
+  05. ang [Kw] @ ?
+  06. wf [WH] @ ?
+  07. wf [WH] @ ?
+  08. his [IM] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+  11. ros [PM] (3A+3C+3D+3F+3G) @ ?
+
+Fri
+  01. fiz [MD] @ ?
+  03. geo [AC] @ ?
+  04. geo [AC] @ ?
+  05. lw [WH] @ ?
+  06. pol [KP] @ ?
+  07. pol [KP] @ ?
+  08. wf [Pi] @ ?
+  09. ros [PM] (3A+3C+3D+3F+3G) @ ?
+  10. wf [Pi] @ ?
+
+
+=== 4A ===
+Mon
+  02. niem [LJ] (4A+4F) @ ?
+  03. wf [Pi] (4A+4C) @ ?
+  04. ang [IP] @ ?
+  05. wos [DC] @ ?
+  06. pol [MN] @ ?
+  07. mat [MP] @ ?
+  10. relkat [Br] (4A+4B+4D+4F) @ ?
+
+Tue
+  01. mat [MP] @ ?
+  02. pol [MN] @ ?
+  03. mat [MP] @ ?
+  04. geo [AC] @ ?
+  05. geo [AC] @ ?
+  06. cw [MN] @ ?
+  07. cw [MN] @ ?
+
+Wed
+  01. wf [WH] @ ?
+  02. fran [Żo] @ ?
+  03. niem [LJ] (4A+4F) @ ?
+  04. ang [MM] @ ?
+  05. lw [MN] @ ?
+  06. mat [MP] @ ?
+  07. pol [MN] @ ?
+
+Thu
+  02. ang [MM] @ ?
+  03. ang [MM] @ ?
+  04. ang [IP] @ ?
+  05. wf [WH] @ ?
+  06. wf [Pi] (4A+4C) @ ?
+  07. wos [DC] @ ?
+  08. wf [Pi] (4A+4C) @ ?
+  10. ang [IP] @ ?
+
+Fri
+  01. ang [MM] @ ?
+  02. ros [PM] (4A+4C+4D+4F+4G) @ ?
+  03. fran [Żo] @ ?
+  04. ang [IP] @ ?
+  05. ang [MM] @ ?
+  06. pol [MN] @ ?
+  07. wf [WH] @ ?
+  08. ang [IP] @ ?
+  10. ros [PM] (4A+4C+4D+4F+4G) @ ?
+
+
+=== 4B ===
+Mon
+  02. ang [IP] @ ?
+  03. pol [KP] @ ?
+  04. pol [KP] @ ?
+  05. ang [MW] @ ?
+  07. geo [AC] @ ?
+  08. ang [MW] @ ?
+  09. wf [WH] (4B+4F) @ ?
+  10. relkat [Br] (4A+4B+4D+4F) @ ?
+  11. ang [IP] @ ?
+
+Tue
+  01. ang [IP] @ ?
+  02. ang [MW] @ ?
+  03. ang [IP] @ ?
+  04. wf [BL] @ ?
+  05. wf [BL] @ ?
+  06. mat [AA] @ ?
+  07. mat [AA] @ ?
+  09. ang [MW] @ ?
+  10. wf [WH] (4B+4F) @ ?
+
+Wed
+  03. mat [AA] @ ?
+  04. wf [BL] @ ?
+  05. fran [Żo] @ ?
+  06. niem [LJ] @ ?
+  07. roselkul [PM] @ ?
+  08. roselkul [PM] @ ?
+  09. fran [Żo] @ ?
+  10. niem [LJ] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  01. wf [WH] (4B+4F) @ ?
+  02. geo [AC] @ ?
+  03. geo [AC] @ ?
+  04. mat [AA] @ ?
+  05. fran [Żo] @ ?
+  08. niem [LJ] @ ?
+
+Fri
+  02. pol [KP] @ ?
+  03. pol [KP] @ ?
+  04. lw [KP] @ ?
+
+
+=== 4C ===
+Mon
+  01. niem [Ku] (4C+4G) @ ?
+  03. wf [Pi] (4A+4C) @ ?
+  04. wos [DC] @ ?
+  05. his [MŻ] @ ?
+  06. his [MŻ] @ ?
+  07. relkat [Br] (4C+4G) @ ?
+
+Tue
+  02. fran [Żo] @ ?
+  03. fran [Żo] @ ?
+  04. mat [AA] @ ?
+  05. mat [AA] @ ?
+  06. pol [KP] @ ?
+  07. pol [KP] @ ?
+  08. ang [JD] @ ?
+  09. wos [DC] @ ?
+  11. ang [Si] @ ?
+
+Wed
+  01. pol [KP] @ ?
+  02. ang [JD] @ ?
+  03. pol [KP] @ ?
+  04. mat [AA] @ ?
+  06. mat [AA] @ ?
+
+Thu
+  02. ang [Si] @ ?
+  03. ang [JD] @ ?
+  04. wf [BL] @ ?
+  05. pol [KP] @ ?
+  06. wf [Pi] (4A+4C) @ ?
+  07. lw [Gr] @ ?
+  08. wf [Pi] (4A+4C) @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+
+Fri
+  02. ros [PM] (4A+4C+4D+4F+4G) @ ?
+  03. niem [Ku] (4C+4G) @ ?
+  04. wos [DC] @ ?
+  05. wf [BL] @ ?
+  06. wf [BL] @ ?
+  08. ang [Si] @ ?
+  10. ros [PM] (4A+4C+4D+4F+4G) @ ?
+
+
+=== 4D ===
+Mon
+  01. wf [WH] @ ?
+  03. mat [RR] @ ?
+  04. mat [RR] @ ?
+  05. lw [TG] @ ?
+  06. pol [PŁ] @ ?
+  07. inf [TG] @ ?
+  09. ang [Wa] @ ?
+  10. relkat [Br] (4A+4B+4D+4F) @ ?
+  11. wf [BL] (3D+4D) @ ?
+
+Tue
+  01. inf [TG] @ ?
+  02. mat [RR] @ ?
+  03. ang [MW] @ ?
+  04. mat [RR] @ ?
+  05. ang [MW] @ ?
+  06. pol [PŁ] @ ?
+  07. fiz [MD] @ ?
+  08. inf [TG] @ ?
+  09. wf [WH] @ ?
+  10. wf [BL] (3D+4D) @ ?
+
+Wed
+  03. mat [RR] @ ?
+  04. mat [RR] @ ?
+  05. wf [BL] (3D+4D) @ ?
+  06. wf [WH] @ ?
+  09. ang [Wa] @ ?
+  11. et [DC] (1A+1B+1C+1D+1F+2A+2B+3A+3C+3G+4B+4D) @ ?
+
+Thu
+  02. niem [Ku] @ ?
+  03. niem [Ku] @ ?
+  04. inf [TG] @ ?
+  05. ang [Wa] @ ?
+  06. fiz [MD] @ ?
+  08. ang [MW] @ ?
+  10. relew [Mr] (1F+2A+2B+2D+2G+3A+3C+3G+4C+4D) @ ?
+
+Fri
+  01. fran [TS] (4D+4F) @ ?
+  02. ros [PM] (4A+4C+4D+4F+4G) @ ?
+  03. fran [TS] (4D+4F) @ ?
+  04. pol [PŁ] @ ?
+  05. pol [PŁ] @ ?
+  10. ros [PM] (4A+4C+4D+4F+4G) @ ?
+
+
+=== 4F ===
+Mon
+  01. wf [Pi] @ ?
+  02. niem [LJ] (4A+4F) @ ?
+  03. lw [Sc] @ ?
+  05. chem [Sz] @ ?
+  06. chem [Sz] @ ?
+  07. pol [PŁ] @ ?
+  09. wf [WH] (4B+4F) @ ?
+  10. relkat [Br] (4A+4B+4D+4F) @ ?
+
+Tue
+  02. biol [Sc] @ ?
+  03. biol [Sc] @ ?
+  04. wf [Pi] @ ?
+  05. wf [Pi] @ ?
+  06. mat [MP] @ ?
+  10. wf [WH] (4B+4F) @ ?
+
+Wed
+  02. mat [MP] @ ?
+  03. niem [LJ] (4A+4F) @ ?
+  05. pol [PŁ] @ ?
+  07. mat [MP] @ ?
+
+Thu
+  01. wf [WH] (4B+4F) @ ?
+  03. ang [Si] @ ?
+  04. chem [Sz] @ ?
+  05. ang [Si] @ ?
+  06. ang [Kw] @ ?
+  07. pol [PŁ] @ ?
+  08. pol [PŁ] @ ?
+  10. mat [MP] @ ?
+
+Fri
+  01. fran [TS] (4D+4F) @ ?
+  02. ros [PM] (4A+4C+4D+4F+4G) @ ?
+  03. fran [TS] (4D+4F) @ ?
+  04. mat [MP] @ ?
+  05. ang [Kw] @ ?
+  06. ang [Si] @ ?
+  07. ang [Kw] @ ?
+  10. ros [PM] (4A+4C+4D+4F+4G) @ ?
+
+
+=== 4G ===
+Mon
+  01. niem [Ku] (4C+4G) @ ?
+  02. fran [Żo] @ ?
+  03. fran [Żo] @ ?
+  04. mat [Me] @ ?
+  05. mat [Me] @ ?
+  06. geo [AC] @ ?
+  07. relkat [Br] (4C+4G) @ ?
+
+Tue
+  01. wf [WH] @ ?
+  03. mat [Me] @ ?
+  04. mat [Me] @ ?
+  05. pol [AT] @ ?
+  06. wf [BH] @ ?
+  07. wf [BH] @ ?
+
+Wed
+  01. ang [MW] @ ?
+  02. ang [MM] @ ?
+  03. ang [MW] @ ?
+  04. mat [Me] @ ?
+  05. mat [Me] @ ?
+  07. wf [WH] @ ?
+  09. ang [MM] @ ?
+
+Thu
+  01. ang [MM] @ ?
+  04. ang [MW] @ ?
+  05. pol [AT] @ ?
+  06. pol [AT] @ ?
+  07. lw [AT] @ ?
+
+Fri
+  01. wf [WH] @ ?
+  02. ros [PM] (4A+4C+4D+4F+4G) @ ?
+  03. niem [Ku] (4C+4G) @ ?
+  04. wf [BH] @ ?
+  05. geo [AC] @ ?
+  06. geo [AC] @ ?
+  07. ang [MW] @ ?
+  08. pol [AT] @ ?
+  09. ang [MM] @ ?
+  10. ros [PM] (4A+4C+4D+4F+4G) @ ?

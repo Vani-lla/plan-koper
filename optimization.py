@@ -1,231 +1,347 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
 from collections import defaultdict
-import numpy as np
-from ortools.sat.python import cp_model
-from read_data import PlanData
+
 import pandas as pd
-import matplotlib
 
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
+from ortools.sat.python import cp_model
 
-# def create_blocks(data: PlanData) -> np.ndarray:
-
-#     return
+from read_data import PlanData, normalize_subject
 
 
-def distribute_hours(data: PlanData) -> np.ndarray:
-    main_requirements = data.get_main_requirements_array()
-    print(len(main_requirements))
-    model = cp_model.CpModel()
+DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-    decision_vars = np.empty((5, len(main_requirements)), dtype=object)
-    for d in range(5):
-        for i, main_requirement in enumerate(main_requirements):
-            decision_vars[d, i] = model.new_int_var(
-                0, 2, f"{d+1}: {data.main_requirement_to_txt(main_requirement)}"
-            )
 
-    for i, (_, _, _, h) in enumerate(main_requirements):
-        model.add(sum(decision_vars[:, i]) == h)
+@dataclass(frozen=True)
+class SolverConfig:
+    days: int = 5
+    slots_per_day: int = 11
+    time_limit_seconds: float = 60.0
+    num_workers: int = 8
+    random_seed: int = 0
+    teacher_gap_weight: int = 10_000
+    class_balance_weight: int = 800
+    partial_group_weight: int = 200
+    room_weight_divisor: int = 20
+    subject_daily_rule_mode: str = "full-class-only"
+    enforce_subject_daily_hard: bool = False
+    additional_patterns_solution_csv: str = "raw_data.csv"
 
-    for t, teacher in enumerate(data.teachers):
-        teacher_requirements_index = [
-            i for i in range(len(main_requirements)) if t in main_requirements[i][1]
-        ]
 
-        for d in range(5):
-            model.Add(sum(decision_vars[d, i] for i in teacher_requirements_index) <= 8)
+@dataclass(frozen=True)
+class TimetableCell:
+    label: str
+    rooms: tuple[str, ...]
+    is_partial_group: bool
 
-    optim_vars = []
-    for c, student_group in enumerate(data.student_groups):
-        student_group_index = [
-            i for i in range(len(main_requirements)) if c in main_requirements[i][2]
-        ]
-        tmp = []
-        for d in range(5):
-            tmp.append(
-                model.new_int_var(0, 20, f"{data.student_groups[c]} lesson for day {d}")
-            )
-        var = model.new_int_var(0, 20, f"max {data.student_groups[c]} lessons")
-        model.add_max_equality(var, tmp)
-        optim_vars.append(var)
 
-    model.minimize(sum(optim_vars))
+@dataclass
+class TimetableSolution:
+    status_name: str
+    objective_value: int | float
+    class_timetables: dict[str, list[list[list[TimetableCell]]]]
+    teacher_gap_count: int
+    class_spread: dict[str, int]
+    partial_group_slots: int
+    room_score: int
 
-    solver = cp_model.CpSolver()
-    status = solver.solve(model)
 
-    if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
-        solution = np.empty_like(decision_vars, dtype=int)
-        for idx, var in np.ndenumerate(decision_vars):
-            solution[idx] = solver.Value(var)
-        return solution
-    else:
-        print("No solution found.")
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _load_csv_hints(
+    data: PlanData,
+    csv_path: str,
+    slots_per_day: int,
+) -> dict[str, list[tuple[int, int]]] | None:
+    """Return ``{lesson_id: sorted[(day, slot)]}`` from a known-valid CSV."""
+    path = Path(csv_path)
+    if not path.exists():
         return None
 
+    df = pd.read_csv(path).dropna(subset=["Subject"]).fillna("")
+    df = df[
+        (df["Subject"].astype(str).str.strip() != "")
+        & (df["Teacher"].astype(str).str.strip() != "")
+    ].copy()
+    df["Day"] = pd.to_numeric(df["Day"], errors="coerce").fillna(-1).astype(int)
+    df["Slot"] = pd.to_numeric(df["Slot"], errors="coerce").fillna(-1).astype(int)
+    df = df[(df["Day"] >= 0) & (df["Slot"] >= 0)]
 
-def construct_plan(
-    data: PlanData, blocks: np.ndarray, horizon: int = 11
-) -> pd.DataFrame | None:
-    main_requirements = data.get_main_requirements_array()
-    
+    by_key: dict[tuple[str, str, str], str] = {}
+    for lesson in data.lessons:
+        for cn in lesson.classes:
+            by_key[(lesson.subject, lesson.teacher, cn)] = lesson.lesson_id
+
+    lid_pos: dict[str, set[tuple[int, int]]] = defaultdict(set)
+    for row in df.itertuples(index=False):
+        lid = by_key.get((
+            normalize_subject(str(row.Subject).strip()),
+            str(row.Teacher).strip(),
+            str(row.Student_group).strip(),
+        ))
+        if lid is not None:
+            lid_pos[lid].add((int(str(row.Day)), int(str(row.Slot))))
+
+    S = slots_per_day
+    return {
+        lid: sorted(positions, key=lambda x: x[0] * S + x[1])
+        for lid, positions in lid_pos.items()
+    }
+
+
+def _build_class_families(
+    data: PlanData,
+    csv_path: str,
+) -> dict[str, list[set[str]]]:
+    """For each class, build merged families of lesson-IDs that may overlap."""
+    empirical = data.get_additional_parallel_patterns_from_solution(csv_path)
+    result: dict[str, list[set[str]]] = {}
+
+    for class_name in data.student_groups:
+        families: list[set[str]] = []
+
+        for family in data.group_families.get(class_name, []):
+            families.append(set(family.lesson_ids))
+
+        for pattern_set in empirical.get(class_name, set()):
+            lid_set = set(pattern_set)
+            if len(lid_set) < 2:
+                continue
+            merged = False
+            for existing in families:
+                if existing & lid_set:
+                    existing.update(lid_set)
+                    merged = True
+                    break
+            if not merged:
+                families.append(lid_set)
+
+        # Merge overlapping families until stable
+        changed = True
+        while changed:
+            changed = False
+            merged_list: list[set[str]] = []
+            for f in families:
+                did_merge = False
+                for mf in merged_list:
+                    if mf & f:
+                        mf.update(f)
+                        did_merge = True
+                        changed = True
+                        break
+                if not did_merge:
+                    merged_list.append(f)
+            families = merged_list
+
+        result[class_name] = families
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Solver
+# ---------------------------------------------------------------------------
+
+def solve_timetable(
+    data: PlanData, config: SolverConfig | None = None,
+) -> TimetableSolution | None:
+    config = config or SolverConfig()
     model = cp_model.CpModel()
 
-    intervals: dict[tuple[tuple[int]], list[cp_model.IntervalVar]] = defaultdict(list)
-    starts: dict[tuple[tuple[int]], list[cp_model.IntervalVar]] = defaultdict(list)
-    days: dict[tuple[tuple[int]], list[cp_model.IntervalVar]] = defaultdict(list)
-    for block, h in main_requirements:
-        s_, t_, s_ = block
-        for _ in range(min(5, h)):
-            start
-            intervals[block].append(model.newin)
-            
-            
+    D = config.days
+    S = config.slots_per_day
 
+    # ---- Family structure ----
+    class_families = _build_class_families(data, config.additional_patterns_solution_csv)
 
-    # intervals: dict[tuple, tuple] = {}
-    # day_vars: dict[tuple, object] = {}
-    # starts: dict[tuple, object] = {}
+    # ---- Decision variables: (day, slot) per lesson occurrence ----
+    day_v: dict[tuple[str, int], cp_model.IntVar] = {}
+    slot_v: dict[tuple[str, int], cp_model.IntVar] = {}
+    x_iv: dict[tuple[str, int], cp_model.IntervalVar] = {}
+    y_iv: dict[tuple[str, int], cp_model.IntervalVar] = {}
 
-    # for d in range(5):
-    #     for block, h in enumerate(blocks[d]):
-    #         if not h:
-    #             continue
-
-    #         block_name = data.main_requirement_to_txt(main_requirements[block])
-    #         key = (block, d)
-
-    #         # x-axis: day
-    #         day_var = model.new_int_var(0, 4, f"day_d{d}_{block_name}")
-    #         model.add_hint(day_var, d)
-    #         xi = model.new_fixed_size_interval_var(day_var, 1, f"xi_d{d}_{block_name}")
-
-    #         # y-axis
-    #         start = model.new_int_var(0, horizon - h, f"start_d{d}_{block_name}")
-    #         yi = model.new_fixed_size_interval_var(start, h, f"yi_d{d}_{block_name}")
-
-    #         intervals[key] = (xi, yi)
-    #         day_vars[key] = day_var
-    #         starts[key] = start
-
-    # for c in range(len(data.student_groups)):
-    #     xi_list, yi_list = [], []
-    #     for d in range(5):
-    #         for block, h in enumerate(blocks[d]):
-    #             if h and c in main_requirements[block][2]:
-    #                 xi, yi = intervals[(block, d)]
-    #                 xi_list.append(xi)
-    #                 yi_list.append(yi)
-
-    #     if len(xi_list) >= 2:
-    #         model.add_no_overlap_2d(xi_list, yi_list)
-
-    # solver = cp_model.CpSolver()
-    # solver.parameters.log_search_progress = True
-    # status = solver.solve(model)
-
-    # if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-    #     print("No solution found.")
-    #     return None
-
-    # ia_idx = data.student_groups.index("1B")
-    # day_labels = ["Mon", "Tue", "Wed", "Thu", "Fri"]
-    # df = pd.DataFrame(
-    #     [[[] for _ in range(horizon)] for _ in range(5)],
-    #     index=day_labels,
-    #     columns=range(horizon),
-    # )
-
-    # for d in range(5):
-    #     for block, h in enumerate(blocks[d]):
-    #         if not h:
-    #             continue
-    #         _, _, student_groups, _ = main_requirements[block]
-    #         if ia_idx not in student_groups:
-    #             continue
-    #         subject_name = data.subjects[main_requirements[block][0][0]]
-    #         key = (block, d)
-    #         solved_day = solver.value(day_vars[key])
-    #         start_val = solver.value(starts[key])
-    #         for t in range(start_val, start_val + h):
-    #             if t < horizon:
-    #                 df.at[day_labels[solved_day], t].append(subject_name)
-
-    # return df
-
-
-DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri"]
-SLOT_LABELS = [f"{8+i}:00" for i in range(11)]  # 08:00 … 18:00
-
-
-def visualise_plan(df: pd.DataFrame, out_path: str = "plan_1A.png") -> None:
-    """Draw the 1A timetable as a coloured grid (days × time slots)."""
-    horizon = len(df.columns)
-    n_days = len(df.index)
-
-    # build a subject→colour map
-    all_subjects = sorted({subj for row in df.values for cell in row for subj in cell})
-    cmap = plt.cm.get_cmap("tab20", max(len(all_subjects), 1))
-    colour_of = {s: cmap(i) for i, s in enumerate(all_subjects)}
-
-    fig, ax = plt.subplots(figsize=(horizon * 1.4 + 1, n_days * 1.2 + 1))
-    ax.set_xlim(0, horizon)
-    ax.set_ylim(0, n_days)
-    ax.invert_yaxis()
-    ax.set_aspect("equal")
-
-    for row_idx, day in enumerate(DAY_LABELS):
-        for col_idx in range(horizon):
-            subjects = df.at[day, col_idx]
-            if not subjects:
-                continue
-            subj = subjects[0]  # there should be exactly one per cell now
-            colour = colour_of.get(subj, "lightgrey")
-            rect = mpatches.FancyBboxPatch(
-                (col_idx + 0.04, row_idx + 0.04),
-                0.92,
-                0.92,
-                boxstyle="round,pad=0.02",
-                linewidth=1,
-                edgecolor="black",
-                facecolor=colour,
-                alpha=0.85,
+    for lesson in data.lessons:
+        lid = lesson.lesson_id
+        for i in range(lesson.weekly_hours):
+            dv = model.new_int_var(0, D - 1, f"d::{lid}::{i}")
+            sv = model.new_int_var(0, S - 1, f"s::{lid}::{i}")
+            day_v[(lid, i)] = dv
+            slot_v[(lid, i)] = sv
+            x_iv[(lid, i)] = model.new_fixed_size_interval_var(
+                dv, 1, f"xi::{lid}::{i}"
             )
-            ax.add_patch(rect)
-            ax.text(
-                col_idx + 0.5,
-                row_idx + 0.5,
-                subj[:12],
-                ha="center",
-                va="center",
-                fontsize=7,
-                fontweight="bold",
-                wrap=True,
+            y_iv[(lid, i)] = model.new_fixed_size_interval_var(
+                sv, 1, f"yi::{lid}::{i}"
             )
 
-    # grid lines
-    for x in range(horizon + 1):
-        ax.axvline(x, color="grey", linewidth=0.4)
-    for y in range(n_days + 1):
-        ax.axhline(y, color="grey", linewidth=0.4)
+        # Symmetry breaking: order occurrences by encoded position
+        for i in range(1, lesson.weekly_hours):
+            model.add(
+                day_v[(lid, i - 1)] * S + slot_v[(lid, i - 1)]
+                < day_v[(lid, i)] * S + slot_v[(lid, i)]
+            )
 
-    ax.set_xticks([i + 0.5 for i in range(horizon)])
-    ax.set_xticklabels(SLOT_LABELS[:horizon], fontsize=8)
-    ax.set_yticks([i + 0.5 for i in range(n_days)])
-    ax.set_yticklabels(DAY_LABELS, fontsize=9)
-    ax.set_title("Class 1A – Weekly Timetable", fontsize=13, fontweight="bold")
-    plt.tight_layout()
-    plt.savefig(out_path, dpi=150)
-    print(f"Timetable saved to  {out_path}")
+    # ---- Teacher no-overlap ----
+    teacher_occs: dict[str, list[tuple[str, int]]] = defaultdict(list)
+    for lesson in data.lessons:
+        for i in range(lesson.weekly_hours):
+            teacher_occs[lesson.teacher].append((lesson.lesson_id, i))
+
+    for occs in teacher_occs.values():
+        if len(occs) > 1:
+            model.add_no_overlap_2d(
+                [x_iv[k] for k in occs],
+                [y_iv[k] for k in occs],
+            )
+
+    # ---- Class no-overlap with family exclusions ----
+    #
+    # For each family member m, build:
+    #   no_overlap_2d( all_class_occ  minus  siblings_of_m )
+    #
+    # m is IN the set  ->  can't share a slot with non-family or other families
+    # siblings are OUT ->  m CAN share a slot with its own family
+    #
+    # Classes without families get a single no_overlap_2d over everything.
+
+    for class_name in data.student_groups:
+        class_occs = [
+            (lesson.lesson_id, i)
+            for lesson in data.lessons
+            if class_name in lesson.classes
+            for i in range(lesson.weekly_hours)
+        ]
+
+        families = class_families[class_name]
+
+        if not families:
+            if len(class_occs) > 1:
+                model.add_no_overlap_2d(
+                    [x_iv[k] for k in class_occs],
+                    [y_iv[k] for k in class_occs],
+                )
+        else:
+            for fam in families:
+                for m_lid in fam:
+                    siblings = fam - {m_lid}
+                    included = [k for k in class_occs if k[0] not in siblings]
+                    if len(included) > 1:
+                        model.add_no_overlap_2d(
+                            [x_iv[k] for k in included],
+                            [y_iv[k] for k in included],
+                        )
+
+    # ---- CSV hints ----
+    hints = _load_csv_hints(data, config.additional_patterns_solution_csv, S)
+    if hints:
+        for lid, positions in hints.items():
+            for i, (d, s) in enumerate(positions):
+                if (lid, i) in day_v:
+                    model.add_hint(day_v[(lid, i)], d)
+                    model.add_hint(slot_v[(lid, i)], s)
+
+    # ---- Solve ----
+    solver = cp_model.CpSolver()
+    solver.parameters.max_time_in_seconds = config.time_limit_seconds
+    solver.parameters.num_search_workers = config.num_workers
+    solver.parameters.random_seed = config.random_seed
+
+    status = solver.solve(model)
+    if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+        return None
+
+    # ---- Build class timetables ----
+    class_names = list(data.student_groups)
+    class_timetables: dict[str, list[list[list[TimetableCell]]]] = {
+        cn: [[[] for _ in range(S)] for _ in range(D)] for cn in class_names
+    }
+
+    for lesson in data.lessons:
+        lid = lesson.lesson_id
+        for i in range(lesson.weekly_hours):
+            d = solver.value(day_v[(lid, i)])
+            s = solver.value(slot_v[(lid, i)])
+            label = f"{lesson.subject} [{lesson.teacher}]"
+            if lesson.is_multiclass:
+                label += f" ({'+'.join(lesson.classes)})"
+            cell = TimetableCell(label=label, rooms=("?",), is_partial_group=False)
+            for cn in lesson.classes:
+                class_timetables[cn][d][s].append(cell)
+
+    # ---- Metrics ----
+    tds: dict[tuple[str, int], list[int]] = defaultdict(list)
+    for lesson in data.lessons:
+        for i in range(lesson.weekly_hours):
+            d = solver.value(day_v[(lesson.lesson_id, i)])
+            s = solver.value(slot_v[(lesson.lesson_id, i)])
+            tds[(lesson.teacher, d)].append(s)
+
+    teacher_gaps = sum(
+        max(ss) - min(ss) + 1 - len(ss)
+        for ss in tds.values()
+        if len(ss) > 1
+    )
+
+    cdb: dict[tuple[str, int], set[int]] = defaultdict(set)
+    for lesson in data.lessons:
+        for i in range(lesson.weekly_hours):
+            d = solver.value(day_v[(lesson.lesson_id, i)])
+            s = solver.value(slot_v[(lesson.lesson_id, i)])
+            for cn in lesson.classes:
+                cdb[(cn, d)].add(s)
+
+    class_spread = {
+        cn: (
+            max(len(cdb.get((cn, d), set())) for d in range(D))
+            - min(len(cdb.get((cn, d), set())) for d in range(D))
+        )
+        for cn in class_names
+    }
+
+    return TimetableSolution(
+        status_name=solver.status_name(status),
+        objective_value=0,
+        class_timetables=class_timetables,
+        teacher_gap_count=teacher_gaps,
+        class_spread=class_spread,
+        partial_group_slots=0,
+        room_score=0,
+    )
 
 
-if __name__ == "__main__":
-    data = PlanData("data")
-    blocks = distribute_hours(data)
+# ---------------------------------------------------------------------------
+# Formatting
+# ---------------------------------------------------------------------------
 
-    df = construct_plan(data, blocks)
-    if df is not None:
-        print(df)
-        # visualise_plan(df)
+def format_solution(solution: TimetableSolution, config: SolverConfig) -> str:
+    lines = [
+        f"Status: {solution.status_name}",
+        f"Objective: {solution.objective_value}",
+        f"Teacher gaps: {solution.teacher_gap_count}",
+        f"Partial-group slots: {solution.partial_group_slots}",
+        f"Room score: {solution.room_score}",
+        "",
+    ]
+
+    for class_name, timetable in solution.class_timetables.items():
+        lines.append(f"=== {class_name} ===")
+        for day in range(config.days):
+            day_name = DAY_NAMES[day] if day < len(DAY_NAMES) else f"Day {day + 1}"
+            lines.append(day_name)
+            for slot in range(config.slots_per_day):
+                cells = timetable[day][slot]
+                if not cells:
+                    continue
+                rendered = []
+                for cell in cells:
+                    room_text = f" @ {', '.join(cell.rooms)}" if cell.rooms else ""
+                    edge_text = " [edge]" if cell.is_partial_group else ""
+                    rendered.append(f"{cell.label}{room_text}{edge_text}")
+                lines.append(f"  {slot + 1:02d}. " + " || ".join(rendered))
+            lines.append("")
+        lines.append("")
+
+    return "\n".join(lines).strip() + "\n"
